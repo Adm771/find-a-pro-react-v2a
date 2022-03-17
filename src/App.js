@@ -1,15 +1,14 @@
 import React from "react";
 import Navbar from "./components/navbar/Navbar";
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home.jsx";
-import Explore from "./components/pages/Explore";
-import LogIn from "./components/pages/LogIn";
-import MyProfile from "./components/pages/MyProfile";
-import SignUp from "./components/pages/SignUp";
-import ContactUs from "./components/pages/ContactUs";
-import AddPost from "./components/pages/AddPost";
-import MyPosts from "./components/pages/MyPosts";
+import Home from "./pages/Home.jsx";
+import Explore from "./pages/Explore";
+import LogIn from "./pages/LogIn";
+import MyProfile from "./pages/MyProfile";
+import SignUp from "./pages/SignUp";
+import ContactUs from "./pages/ContactUs";
+import AddPost from "./pages/AddPost";
+import MyPosts from "./pages/MyPosts";
 
 
 
