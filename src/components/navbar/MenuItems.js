@@ -11,7 +11,7 @@ export const MenuItems = [
   },
   {
     title: 'All post',
-    path: '/explore',
+    path: '/all-posts',
     cName: 'dropdown-link'
   },
   {

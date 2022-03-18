@@ -1,9 +1,11 @@
 import React from 'react';
+import FormAddRequest from '../shared/FormAddRequest'
 
 export default function AddPost() {
   return (
-    
-      <h1 className='AddPost'>Contact Us</h1>
-
+    <>
+    <div>THIS IS ADD POST PAGE</div>
+    < FormAddRequest />
+    </>
   );
 }
