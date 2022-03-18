@@ -69,7 +69,7 @@ const FormAddRequest = () => {
 
     addRequest(newRequest);
 
-    navigate("/customerrequests");
+    navigate("/my-posts");
   };
 
   let navigate = useNavigate();
