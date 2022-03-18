@@ -3,7 +3,7 @@ import Header from "./Header";
 import Button from "./Button";
 import { useParams, useNavigate } from "react-router-dom";
 
-const RequestDetails = () => {
+const RequestDetailsByUser = () => {
   let { requestId } = useParams();
 
   const [request, setRequest] = React.useState([]);
@@ -47,9 +47,13 @@ const RequestDetails = () => {
       </h3>
       <div className="btnContainer">
         <Button
-          text={"Back to all post"}
+          text={"Show matching offers"}
+          onClick={console.log("show matching offers")}
+        />
+        <Button
+          text={"Back to my requests"}
           onClick={() => {
-            navigate("/all-posts");
+            navigate("/my-posts");
           }}
         />
       </div>
@@ -57,4 +61,4 @@ const RequestDetails = () => {
   );
 };
 
-export default RequestDetails;
+export default RequestDetailsByUser;

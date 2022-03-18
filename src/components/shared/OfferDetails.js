@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Header from "./Header";
 import Button from "./Button";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import OfferContext from "../../contexts/OfferContextProvider";
 import UserContext from "../../contexts/UserContextProvider";
 
@@ -24,8 +24,10 @@ const OfferDetails = () => {
     getOfferAndUser();
   }, []);
 
+  const navigate = useNavigate();
+
   return (
-    <div id="offerDetails" className="container">
+    <div id="offerDetails" className="rectangle-list">
       <Header title="Offer details" />
       <h3> Offer id: {offerById.offerId}</h3>
       <h3> Offer title: {offerById.title}</h3>
@@ -43,6 +45,12 @@ const OfferDetails = () => {
         <h3> User description: {userById.description}</h3> 
         <h3> User phone number: {userById.phoneNumber}</h3> 
         <h3> User email: {userById.email}</h3>  */}
+      <Button
+        text={"Back to all post"}
+        onClick={() => {
+          navigate("/all-posts");
+        }}
+      />
     </div>
   );
 };

@@ -17,6 +17,7 @@ import { RequestContextProvider } from "./contexts/RequestContextProvider";
 import { OfferContextProvider } from "./contexts/OfferContextProvider";
 
 import RequestDetails from "./components/shared/RequestDetails";
+import RequestDetailsByUser from "./components/shared/RequestDetailsByUser";
 import OfferDetails from "./components/shared/OfferDetails";
 
 import FormEditRequest from "./components/shared/FormEditRequest";
@@ -41,6 +42,7 @@ function App() {
               <Route path="/all-posts" element={<AllPosts />} />
 
               <Route path="/request/:requestId" element={ <RequestDetails /> } />
+              <Route path="/request/user/:requestId" element={ <RequestDetailsByUser /> } />
               <Route path="/offer/:offerId" element={ <OfferDetails /> } />
 
               <Route path="/request/edit/:requestId" element={ <FormEditRequest /> } />

@@ -3,8 +3,8 @@ import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
 import RequestContext from "../../contexts/RequestContextProvider";
 
-const RequestCard = ({ request }) => {
-  // const { deleteRequest } = useContext(RequestContext);
+const RequestCardByUser = ({ request }) => {
+  const { deleteRequest } = useContext(RequestContext);
 
   const navigate = useNavigate();
 
@@ -31,9 +31,15 @@ const RequestCard = ({ request }) => {
             <Button text={"Write review"} onClick={console.log("add reviev")} />
           )}
           <div className="btnContainer">
-            <Button text={"Write to this user"} />
-            <Link to={`/request/${request.requestId}`} className="btn1">
-              Show request details and user details
+            <Link to={`/request/edit/${request.requestId}`} className="btn1">
+              Edit request details
+            </Link>
+            <Button
+              text={"Delete request"}
+              onClick={() => deleteRequest(request.requestId)}
+            />
+            <Link to={`/request/user/${request.requestId}`} className="btn1">
+              Show request details
             </Link>
           </div>
         </div>
@@ -42,4 +48,4 @@ const RequestCard = ({ request }) => {
   );
 };
 
-export default RequestCard;
+export default RequestCardByUser;

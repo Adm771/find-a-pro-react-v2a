@@ -1,18 +1,14 @@
 import React, { useContext } from "react";
 import RequestCard from "./RequestCard";
 import Header from "./Header";
-import Button from "./Button";
 import { useNavigate } from "react-router-dom";
-import UserContext from "../../contexts/UserContextProvider";
 import RequestContext from "../../contexts/RequestContextProvider";
 
 const RequestList = () => {
-  const { loggedUser } = useContext(UserContext);
-  console.log(loggedUser);
-  const { requestsByUserId, getRequestsByUserId } = useContext(RequestContext);
+  const { requests, getRequests } = useContext(RequestContext);
 
   React.useEffect(() => {
-    getRequestsByUserId(loggedUser.userId);
+    getRequests();
   }, []);
 
   let navigate = useNavigate();
@@ -20,14 +16,8 @@ const RequestList = () => {
   return (
     <>
       <div id="requestList" className="container">
-        <Header title="My requests" />
-        <Button
-          text="Add request"
-          onClick={() => {
-            navigate("/add-post");
-          }}
-        />
-        {requestsByUserId.map((request) => (
+        <Header title="All requests" />
+        {requests.map((request) => (
           <RequestCard key={request.requestId} request={request} />
         ))}
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 
 const OfferContext = createContext();
 
@@ -32,6 +32,17 @@ export function OfferContextProvider({ children }) {
     setOffersByUserId(data);
   };
 
+  // Add offer
+  const addOffer = async (newOffer) => {
+    const response = await fetch("http://localhost:8080/api/v1/offers", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(newOffer),
+    });
+    const data = await response.json();
+    setOffers([...offers, data]);
+  };
+
   return (
     <OfferContext.Provider
       value={{
@@ -41,6 +52,7 @@ export function OfferContextProvider({ children }) {
         getOffersByUserId,
         offerById,
         getOfferById,
+        addOffer,
       }}
     >
       {children}

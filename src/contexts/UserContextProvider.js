@@ -33,7 +33,7 @@ export function UserContextProvider({ children }) {
       body: JSON.stringify(newUser),
     });
     const data = await response.json();
-    setLoggedUser([data]);
+    setLoggedUser(data[0]);
   };
 
   return (
